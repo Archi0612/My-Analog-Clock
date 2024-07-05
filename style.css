@@ -1,0 +1,136 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+body {
+  background: linear-gradient(
+    45deg,
+    rgba(49, 8, 233, 0.5),
+    rgba(35, 186, 240, 0.5)
+  );
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.clock {
+  position: relative;
+  height: 40vw;
+  width: 40vw;
+  background-color: rgb(94, 186, 239);
+  border-radius: 50%;
+  border: 2px solid blue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 8px 2px 10px rgba(3, 52, 92, 0.8),
+    -8px -2px 10px rgba(14, 71, 146, 0.8);
+}
+
+.num {
+  position: absolute;
+  color: rgb(1, 41, 78);
+  /*top bottom left right space == 20px*/
+  inset: 20px;
+  text-align: center;
+  transform: rotate(calc(30deg * var(--val)));
+}
+
+.num b {
+  display: inline-block;
+  transform: rotate(calc(-30deg * var(--val)));
+  font-size: 27px;
+}
+
+.dot {
+  position: absolute;
+  width: 7%;
+  height: 7%;
+  background-color: rgb(94, 186, 239);
+  border-radius: 50%;
+  box-shadow: 8px 2px 10px rgba(3, 52, 92, 0.8),
+    -8px -2px 10px rgba(4, 32, 68, 0.8);
+  z-index: 2;
+}
+
+.digi-clock {
+  position: absolute;
+  display: flex;
+  width: 39%;
+  height: 10%;
+  /* background-color: rgb(125, 158, 216); */
+  bottom: 25%;
+  background: transparent;
+  box-shadow: inset 1px 2px 10px rgba(0, 0, 0, 0.8),
+    -1px -2px 10px rgba(0, 0, 0, 0.8);
+  align-items: center;
+  justify-content: center;
+  gap: 8%;
+  font-size: 23px;
+  font-weight: 700;
+  color: rgb(1, 41, 78);
+}
+
+.dh {
+  color: rgb(88, 16, 155);
+}
+
+.dm {
+  color: rgb(138, 3, 162);
+}
+
+.ds {
+  color: rgb(54, 5, 179);
+}
+.hour-hand,
+.min-hand,
+.sec-hand {
+  position: absolute;
+  background: aliceblue;
+  border-radius: 20px;
+  transform-origin: bottom;
+}
+
+.hour-hand {
+  background-color: rgb(88, 16, 155);
+  width: 1%;
+  height: 30%;
+  top: 20.5%;
+  /* opacity: 0; */
+}
+
+.min-hand {
+  background-color: rgb(138, 3, 162);
+  width: 1%;
+  height: 35%;
+  top: 15.5%;
+  /* opacity: 0; */
+}
+
+.sec-hand {
+  background-color: rgb(54, 5, 179);
+  width: 1%;
+  height: 40%;
+  top: 10.5%;
+  /* opacity: 0; */
+}
+
+@media (max-width: 936px) {
+  .clock {
+    width: 80vw;
+    height: 80vw;
+  }
+
+  .digi-clock {
+    font-size: 4vw;
+  }
+  .num {
+    font-size: 6vw;
+  }
+}
